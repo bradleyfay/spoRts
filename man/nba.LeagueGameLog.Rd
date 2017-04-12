@@ -16,6 +16,6 @@ dataframe
 Get Game Logs
 }
 \examples{
-df <- nba.LeageGameLog()
+df <- nba.LeagueGameLog()
 head(df)
 }

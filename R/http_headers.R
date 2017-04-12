@@ -1,4 +1,4 @@
-nba_hdrs <- add_headers(
+nba_hdrs <- httr::add_headers(
   Connection = 'keep-alive',
   'Cache-Control' = 'max-age=0',
   Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',

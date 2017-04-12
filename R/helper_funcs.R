@@ -5,8 +5,7 @@ gen_url <- function(endpoint) {
 
 
 create_df <- function(results, tbl_id){
-  transpose(results$resultSets[[tbl_id]]$rowSet) %>%
-    map(unlist) %>%
-    as.data.frame(col.names = unlist(results$resultSets[[tbl_id]]$headers)) %>%
-    return
+  t <- purrr::transpose(results$resultSets[[tbl_id]]$rowSet)
+  u <- purrr::map(t, unlist)
+  return(as.data.frame(u, col.names = unlist(results$resultSets[[tbl_id]]$headers)))
 }

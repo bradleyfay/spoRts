@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' df <- nba.LeageGameLog()
+#' df <- nba.LeagueGameLog()
 #' head(df)
 nba.LeagueGameLog <- function(...) {
   URL <- gen_url("leaguegamelog")
@@ -21,7 +21,7 @@ nba.LeagueGameLog <- function(...) {
       DateTo = Sys.Date() - 1,
       # Defaulting to yesterday as it gets wonky with games still in play
       Counter = 0)
-  params <- modifyList(...)
+  params <- utils::modifyList(...)
   resp <- httr::GET(url = URL, query = params, nba_hdrs)
   content <- jsonlite::fromJSON(httr::content(resp, "text", encoding = "UTF-8"),
                                 simplifyVector = FALSE)
