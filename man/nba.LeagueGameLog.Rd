@@ -17,5 +17,6 @@ Get Game Logs
 }
 \examples{
 df <- nba.LeagueGameLog()
+names(df)
 head(df)
 }
